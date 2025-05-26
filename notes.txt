@@ -1,3 +1,7 @@
+-------------------------------------------------------------------------------
+PART 1
+-------------------------------------------------------------------------------
+
 TF2 ROS create coordinate frame
 -------------------------------
 ros2 run tf2_ros static_transform_publisher x y z yaw pitch roll frame_id child_frame_id
@@ -13,6 +17,9 @@ Demo RVIZ2
 4.) source /home/simulations/ros2_sims_ws/install/setup.bash
 5.) ros2 run deepmind_bot_trajectory_sender move_head.py 0.5 0.0 1
 
+-------------------------------------------------------------------------------
+PART 2
+-------------------------------------------------------------------------------
 
 TF frames helper commands
 -------------------------
@@ -35,3 +42,9 @@ ros2 run tf2_ros tf2_echo [reference_frame] [target_frame]
 ros2 run tf2_ros tf2_echo rgb_camera_link_frame turtle_chassis
     gives you the deltas in translation and rotation between any TF frames selected
     updated as the robot moves around
+
+RVIZ2 follow demo:
+------------------
+source /home/simulations/ros2_sims_ws/install/setup.bash
+ros2 run turtle_tf_3d_ros2 move_generic_model.py
+ros2 topic pub /destination_frame std_msgs/msg/String "data: 'turtle_attach_frame'"

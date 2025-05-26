@@ -23,3 +23,15 @@ ros2 run tf2_tools view_frames
         - The most recent transform and how old it is 
             0.0 is a static transform (constant)
         - How much data TF buffer has stored
+
+ros2 run rqt_tf_tree rqt_tf_tree
+    same as view_frames but you can refresh to see updates, no need to regenerate
+
+ros2 topic echo /tf
+    only publishes from one frame to a connected frame
+
+ros2 run tf2_ros tf2_echo [reference_frame] [target_frame]
+| i.e.
+ros2 run tf2_ros tf2_echo rgb_camera_link_frame turtle_chassis
+    gives you the deltas in translation and rotation between any TF frames selected
+    updated as the robot moves around

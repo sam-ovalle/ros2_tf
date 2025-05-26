@@ -63,3 +63,8 @@ reference.) ros2 pkg create --build-type ament_cmake my_tf_ros2_course_pkg --dep
 4.) rviz2 -d ~/ros2_ws/src/unit3_config.rviz
 5.) ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/cam_bot_cmd_vel
 6.) ros2 run rqt_tf_tree rqt_tf_tree
+
+tf2_monitor: time between frames
+--------------------------------
+ros2 run tf2_ros tf2_monitor camera_bot_base_link rgb_camera_link_frame
+ros2 run tf2_ros tf2_monitor world camera_bot_base_link

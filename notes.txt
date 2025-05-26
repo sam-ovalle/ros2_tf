@@ -5,7 +5,21 @@ ros2 run tf2_ros static_transform_publisher x y z yaw pitch roll frame_id child_
 ros2 run tf2_ros static_transform_publisher --x 0 --y 4.0 --z 0 --roll 0 --pitch 0 --yaw 0 --frame-id deepmind_robot1_odom --child-frame-id rock
 
 
-Open RVIZ2
+Demo RVIZ2
 ----------
-source /home/simulations/ros2_sims_ws/install/setup.bash
-rviz2
+1.) source /home/simulations/ros2_sims_ws/install/setup.bash
+2.) rviz2
+3.) Add TF and a robot model
+4.) source /home/simulations/ros2_sims_ws/install/setup.bash
+5.) ros2 run deepmind_bot_trajectory_sender move_head.py 0.5 0.0 1
+
+
+TF frames helper commands
+-------------------------
+ros2 run tf2_tools view_frames
+    Notice broadcaster at the top of the pdf generated
+        Contains
+        - Average rate of publication in Hz
+        - The most recent transform and how old it is 
+            0.0 is a static transform (constant)
+        - How much data TF buffer has stored

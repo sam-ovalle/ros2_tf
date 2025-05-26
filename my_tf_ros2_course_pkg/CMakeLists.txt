@@ -27,6 +27,7 @@ install(
 install(PROGRAMS
   scripts/cam_bot_odom_to_tf_pub.py
   scripts/cam_bot_odom_to_tf_pub_late_tf_fixed.py
+  scripts/static_broadcaster_front_turtle_frame.py
   DESTINATION lib/${PROJECT_NAME}
 )
 

@@ -68,3 +68,31 @@ tf2_monitor: time between frames
 --------------------------------
 ros2 run tf2_ros tf2_monitor camera_bot_base_link rgb_camera_link_frame
 ros2 run tf2_ros tf2_monitor world camera_bot_base_link
+
+Static broadcaster
+------------------
+TFs that DO NOT change over time
+    Can be published in one of 3 ways:
+        1.) through the command line 
+        2.) through a python or C++ program
+        3.) through launch files
+
+1.) Using command line
+----------------------
+!!!!!!! Using XYZ Roll Pitch Yaw
+ros2 run tf2_ros static_transform_publisher --x x --y y --z z --yaw yaw --pitch pitch --roll roll --frame-id frame_id --child-frame-id child_frame_id
+!!!!!!! Using XYZW Quaternion
+ros2 run tf2_ros static_transform_publisher --x x --y y --z z --qx qx --qy qy --qz qz --qw qw --frame-id frame_id --child-frame-id child_frame_id
+!!!!!!! These commands could go in a launch file
+
+1.) demo
+--------
+1.) cd ~/ros2_ws && colcon build && source install/setup.bash
+2.) ros2 run my_tf_ros2_course_pkg cam_bot_odom_to_tf_pub_late_tf_fixed.py
+3.) source /home/simulations/ros2_sims_ws/install/setup.bash
+4.) rviz2 -d ~/ros2_ws/src/unit3_config.rviz
+5.) source ~/ros2_ws/install/setup.bash
+6.) ros2 launch my_tf_ros2_course_pkg publish_static_transform_odom_to_world.launch.py
+7.) ros2 run rqt_tf_tree rqt_tf_tree
+8.) ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/cam_bot_cmd_vel
+9.) ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/turtle_cmd_vel

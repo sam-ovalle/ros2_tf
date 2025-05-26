@@ -48,3 +48,18 @@ RVIZ2 follow demo:
 source /home/simulations/ros2_sims_ws/install/setup.bash
 ros2 run turtle_tf_3d_ros2 move_generic_model.py
 ros2 topic pub /destination_frame std_msgs/msg/String "data: 'turtle_attach_frame'"
+
+-------------------------------------------------------------------------------
+PART 3
+-------------------------------------------------------------------------------
+
+TF Demo
+-------
+reference.) ros2 pkg create --build-type ament_cmake my_tf_ros2_course_pkg --dependencies tf2_ros geometry_msgs nav_msgs
+
+1.) cd ~/ros2_ws && colcon build && source install/setup.bash
+2.) ros2 run my_tf_ros2_course_pkg cam_bot_odom_to_tf_pub.py
+3.) source /home/simulations/ros2_sims_ws/install/setup.bash
+4.) rviz2 -d ~/ros2_ws/src/unit3_config.rviz
+5.) ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/cam_bot_cmd_vel
+6.) ros2 run rqt_tf_tree rqt_tf_tree

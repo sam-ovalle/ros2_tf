@@ -108,3 +108,15 @@ ros2 run tf2_ros static_transform_publisher --x x --y y --z z --qx qx --qy qy --
 7.) source ~/ros2_ws/install/setup.bash
 8.) ros2 run my_tf_ros2_course_pkg static_broadcaster_front_turtle_frame.py turtle_chassis my_front_turtle_frame 0.4 0 0.4 0 0.7 3.1416
 9.) ros2 run teleop_twist_keyboard teleop_twist_keyboard --ros-args --remap cmd_vel:=/turtle_cmd_vel
+
+
+tf_listener demo
+----------------
+1.) cd ~/ros2_ws && colcon build && source install/setup.bash
+2.) ros2 launch my_tf_ros2_course_pkg start_tf_fixes.launch.xml
+3.) cd ~/ros2_ws
+4.) source install/setup.bash
+5.) rviz2 -d ~/ros2_ws/src/unit3_config.rviz
+6.) ros2 run my_tf_ros2_course_pkg static_broadcaster_front_turtle_frame.py turtle_chassis my_front_turtle_frame 0.4 0 0.4 0 0.7 3.1416
+7.) ctrl+c step 6
+8.) ros2 topic pub /destination_frame std_msgs/msg/String "data: 'my_front_turtle_frame'"

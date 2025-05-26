@@ -1,0 +1,21 @@
+ROS Standard Units and Coordinate Conventions
+---------------------------------------------
+https://www.ros.org/reps/rep-0103.html
+
+Coordinate frames for
+--------------------------------------
+Mobile Platforms
+--------------------------------------
+https://www.ros.org/reps/rep-0105.html
+--------------------------------------
+Humanoid Robots
+--------------------------------------
+https://www.ros.org/reps/rep-0120.html
+--------------------------------------
+Serial Industrial Manipulators
+--------------------------------------
+https://gavanderhoorn.github.io/rep/rep-0199.html
+--------------------------------------
+Aerial Vehicles
+--------------------------------------
+https://ros.org/reps/rep-0147.html
